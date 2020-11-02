@@ -1,0 +1,20 @@
+[
+  {
+    "name": "home-login",
+    "path": "/home/login",
+    "component": "C:\\\\Users\\\\10251\\\\Desktop\\\\nuxt-test\\\\pages\\\\home\\\\login.vue",
+    "chunkName": "pages/home/login"
+  },
+  {
+    "name": "home-user",
+    "path": "/home/user",
+    "component": "C:\\\\Users\\\\10251\\\\Desktop\\\\nuxt-test\\\\pages\\\\home\\\\user.vue",
+    "chunkName": "pages/home/user"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\10251\\\\Desktop\\\\nuxt-test\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
