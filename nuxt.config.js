@@ -1,3 +1,4 @@
+const path = "http://yqtree.natapp1.cc";
 export default {
   server: {
     port: 8000, // default: 3000
@@ -9,7 +10,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'http://192.168.1.185:8088',
+      target: path,
       changeOrigin: true,
       pathRewrite: {
         '^/api' : '/'
@@ -41,6 +42,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     {src: '@/plugins/vant-ui', ssr: true},
+    {src: '@/plugins/axios', ssr: false},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -54,7 +56,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'cookie-universal-nuxt'
   ],
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
 

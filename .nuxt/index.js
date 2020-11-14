@@ -12,9 +12,11 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_07660999 from 'nuxt_plugin_plugin_07660999' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_47f45b3c from 'nuxt_plugin_axios_47f45b3c' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_plugin_3b35bbee from 'nuxt_plugin_plugin_3b35bbee' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_cookieuniversalnuxt_3a856354 from 'nuxt_plugin_cookieuniversalnuxt_3a856354' // Source: .\\cookie-universal-nuxt.js (mode: 'all')
+import nuxt_plugin_axios_8bfec8a8 from 'nuxt_plugin_axios_8bfec8a8' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_vantui_6b945fbc from 'nuxt_plugin_vantui_6b945fbc' // Source: ..\\plugins\\vant-ui (mode: 'all')
+import nuxt_plugin_axios_2228ef02 from 'nuxt_plugin_axios_2228ef02' // Source: ..\\plugins\\axios (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -174,16 +176,24 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_07660999 === 'function') {
-    await nuxt_plugin_plugin_07660999(app.context, inject)
+  if (typeof nuxt_plugin_plugin_3b35bbee === 'function') {
+    await nuxt_plugin_plugin_3b35bbee(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_47f45b3c === 'function') {
-    await nuxt_plugin_axios_47f45b3c(app.context, inject)
+  if (typeof nuxt_plugin_cookieuniversalnuxt_3a856354 === 'function') {
+    await nuxt_plugin_cookieuniversalnuxt_3a856354(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_8bfec8a8 === 'function') {
+    await nuxt_plugin_axios_8bfec8a8(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vantui_6b945fbc === 'function') {
     await nuxt_plugin_vantui_6b945fbc(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_axios_2228ef02 === 'function') {
+    await nuxt_plugin_axios_2228ef02(app.context, inject)
   }
 
   // Lock enablePreview in context

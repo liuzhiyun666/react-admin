@@ -28,10 +28,10 @@
 </template>
 
 <script>
-// import request from '../plugins/request';
 export default {
+
   mounted() {
-    this.$axios.post('/mtop').then(res => {
+    this.$axios.post("/mtop").then(res => {
       console.log(res)
     })
       .catch(e => {
